@@ -4,5 +4,5 @@
 envsubst </app/config.yml.tmpl >/app/config.yml
 
 # start docker-event client
-docker-events -c /app/config.yml -f /app/dockerbot.py
+docker-events -c /app/config.yml -m dockerbot
 
