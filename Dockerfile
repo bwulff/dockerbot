@@ -1,4 +1,5 @@
 FROM python:2-onbuild
+ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update && \
     apt-get install -y git gettext && \
@@ -6,10 +7,11 @@ RUN apt-get update && \
     apt-get -y clean && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR app
+RUN mkdir /app
+WORKDIR /app
 
-ADD . /app
+ADD . /app/
 
-RUN pip install -r requirements.txt
+RUN pip install -r /app/requirements.txt 
 
-ENTRYPOINT /app/entrypoint.sh
+CMD ["sh", "/app/entrypoint.sh"]

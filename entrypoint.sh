@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # apply configuration
-envsubst <config.yml.tmpl >config.yml
+envsubst </app/config.yml.tmpl >/app/config.yml
 
 # start docker-event client
-docker-event -s /tmp/docker.socket -c config.yml -f docker-bot.py
+docker-events -c /app/config.yml -f /app/dockerbot.py
 
