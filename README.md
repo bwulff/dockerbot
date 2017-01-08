@@ -1,6 +1,6 @@
 # Docker Notifier #
 
-Script that post messages to a Slack channel when a Docker container dies.
+Script that posts messages to a Slack channel when a Docker container dies.
 
 ## Configuration ##
 
